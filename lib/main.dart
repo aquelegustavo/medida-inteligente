@@ -1,5 +1,8 @@
+import 'package:desafio_mi/pages/auth/auth_page.dart';
+import 'package:desafio_mi/pages/home/home_page.dart';
 import 'package:flutter/material.dart';
 import './config/app_theme.dart';
+import 'routes.dart';
 
 // Debub erros
 import 'package:sentry_flutter/sentry_flutter.dart';
@@ -20,6 +23,8 @@ Future<void> main() async {
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
+  final _isUserLoggedIn = false;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -27,7 +32,8 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.light,
       theme: AppTheme.lightThemeData,
       darkTheme: AppTheme.darkThemeData,
-      home: MyHomePage(title: 'Medida Inteligente'),
+      initialRoute: '/',
+      routes: routes,
     );
   }
 }
