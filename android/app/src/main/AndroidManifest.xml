@@ -1,5 +1,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.desafio_mi">
+
+   <!-- Requisitando permissão para uso de internet no Android [obrigatório]-->
+   <uses-permission android:name="android.permission.INTERNET" />
+
    <application
         android:label="desafio_mi"
         android:icon="@mipmap/ic_launcher">

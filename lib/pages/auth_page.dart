@@ -1,7 +1,7 @@
 import 'package:desafio_mi/components/app_bar.dart';
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget {
+class AuthPage extends StatelessWidget {
   @override
   Widget build(BuildContext contex) {
     return Scaffold(
@@ -9,13 +9,13 @@ class HomePage extends StatelessWidget {
       body: Hero(
         tag: 'a',
         child: Column(
-          children: [
+          children: <Widget>[
             Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Text(
-                    'Página Home',
+                    'Página Auth',
                   ),
                 ],
               ),

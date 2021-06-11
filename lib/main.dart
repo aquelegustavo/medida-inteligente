@@ -1,6 +1,5 @@
 import 'package:desafio_mi/components/app_bar.dart';
-import 'package:desafio_mi/pages/auth/auth_page.dart';
-import 'package:desafio_mi/pages/home/home_page.dart';
+
 import 'package:flutter/material.dart';
 import './config/app_theme.dart';
 import 'routes.dart';
@@ -76,6 +75,11 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headline4,
+            ),
+            ElevatedButton(
+              onPressed: () {},
+              child: Text('Button'),
+              style: ElevatedButton.styleFrom(shape: StadiumBorder()),
             ),
           ],
         ),
