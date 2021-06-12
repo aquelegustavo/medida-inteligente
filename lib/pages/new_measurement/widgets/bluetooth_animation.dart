@@ -70,7 +70,7 @@ class _BluetoothAnimationState extends State<BluetoothAnimation>
         ),
         Icon(Icons.bluetooth,
             size: 64,
-            color: Theme.of(context).textTheme.headline2?.color,
+            color: Theme.of(context).colorScheme.onPrimary,
             semanticLabel: "Ícone bluetooth"),
       ],
     );

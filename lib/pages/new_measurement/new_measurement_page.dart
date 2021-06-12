@@ -1,10 +1,8 @@
-import 'package:desafio_mi/components/app_bar.dart';
+import 'package:flutter/material.dart';
 import 'package:desafio_mi/components/app_body.dart';
 import 'package:desafio_mi/components/default_button.dart';
 import 'package:desafio_mi/components/or_divider.dart';
-import 'package:desafio_mi/config/app_colors.dart';
 import 'package:desafio_mi/pages/new_measurement/widgets/bluetooth_animation.dart';
-import 'package:flutter/material.dart';
 
 class NewMeasurementPage extends StatelessWidget {
   @override
@@ -41,4 +39,3 @@ class NewMeasurementPage extends StatelessWidget {
     );
   }
 }
-

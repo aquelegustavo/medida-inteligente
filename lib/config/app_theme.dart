@@ -6,6 +6,21 @@ class AppTheme {
     brightness: Brightness.light,
     primaryColor: AppColors.darkBlue,
     accentColor: AppColors.darkBlue,
+    colorScheme: ColorScheme(
+      primary: AppColors.darkBlue,
+      primaryVariant: Color(0xFF117378),
+      secondary: AppColors.darkBlue,
+      secondaryVariant: Color(0xFFFAFBFB),
+      surface: Colors.white,
+      background: Colors.white,
+      error: Color(0xffb00020),
+      onPrimary: Colors.white,
+      onSecondary: Colors.black,
+      onSurface: Colors.black,
+      onBackground: Colors.black,
+      onError: Colors.white,
+      brightness: Brightness.light,
+    ),
     backgroundColor: AppColors.gray,
     textTheme: TextTheme(
       headline3: TextStyle(
@@ -19,15 +34,6 @@ class AppTheme {
         fontFamily: 'Roboto',
         fontWeight: FontWeight.w400,
         color: AppColors.black,
-      ),
-    ),
-    buttonTheme: ButtonThemeData(
-      buttonColor: AppColors.darkBlue,
-      textTheme: ButtonTextTheme.primary,
-    ),
-    elevatedButtonTheme: ElevatedButtonThemeData(
-      style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all<Color>(AppColors.darkBlue),
       ),
     ),
   );
