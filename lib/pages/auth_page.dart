@@ -3,11 +3,10 @@ import 'package:flutter/material.dart';
 
 class AuthPage extends StatelessWidget {
   @override
-  Widget build(BuildContext contex) {
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBarComponent(),
-      body: Hero(
-        tag: 'a',
+      body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
             Center(
