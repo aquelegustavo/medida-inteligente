@@ -21,6 +21,15 @@ class AppTheme {
         color: AppColors.black,
       ),
     ),
+    buttonTheme: ButtonThemeData(
+      buttonColor: AppColors.darkBlue,
+      textTheme: ButtonTextTheme.primary,
+    ),
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ButtonStyle(
+        backgroundColor: MaterialStateProperty.all<Color>(AppColors.darkBlue),
+      ),
+    ),
   );
 
   static ThemeData darkThemeData = ThemeData(

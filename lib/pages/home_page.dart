@@ -78,6 +78,7 @@ class _NewMeasurementsSection extends StatelessWidget {
                           padding: EdgeInsets.all(6.0),
                           child: Text(
                             "Nova Medição",
+                            textAlign: TextAlign.center,
                             style: Theme.of(context).textTheme.headline3,
                           ),
                         ),
