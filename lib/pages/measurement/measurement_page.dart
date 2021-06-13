@@ -1,11 +1,29 @@
 import 'package:desafio_mi/components/text_section.dart';
 import 'package:flutter/material.dart';
 import 'package:desafio_mi/components/app_body.dart';
-import 'package:desafio_mi/pages/select_gas_pumps/widgets/gas_pumps_keyboard_form.dart';
+
+class NavigationSelectPumpsToMeasurementArguments {
+  /*
+   * As variáveis gasStationId e gasStationPumpId 
+   * são rebidas, via sistema de rotas, pelo formulário do selecionador de 
+   * bombas da página [select_pumps]
+   * 
+   */
+  final String gasStationId;
+  final int gasStationPumpId;
+
+  NavigationSelectPumpsToMeasurementArguments(
+      this.gasStationId, this.gasStationPumpId);
+}
 
 class MeasurementPage extends StatelessWidget {
+  static const routeName = '/measurement';
+
   @override
   Widget build(BuildContext context) {
+    final _navigationArguments = ModalRoute.of(context)!.settings.arguments
+        as NavigationSelectPumpsToMeasurementArguments;
+
     return AppBody(
       child: Container(
         padding: EdgeInsets.all(24.0),

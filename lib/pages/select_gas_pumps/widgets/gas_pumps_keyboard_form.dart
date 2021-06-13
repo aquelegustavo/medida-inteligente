@@ -1,12 +1,16 @@
 import 'package:desafio_mi/components/default_button.dart';
+import 'package:desafio_mi/pages/measurement/measurement_page.dart';
 import 'package:flutter/material.dart';
 import 'package:badges/badges.dart';
 import 'package:desafio_mi/config/app_colors.dart';
 
 class GasPumpsKeyboard extends StatefulWidget {
-  GasPumpsKeyboard({Key? key, required this.title}) : super(key: key);
+  GasPumpsKeyboard(
+      {Key? key, required this.gasStationPumpsList, required this.gasStationId})
+      : super(key: key);
 
-  final String title;
+  final List<String> gasStationPumpsList;
+  final String gasStationId;
 
   @override
   _GasPumpsKeyboardState createState() => _GasPumpsKeyboardState();
@@ -14,8 +18,6 @@ class GasPumpsKeyboard extends StatefulWidget {
 
 class _GasPumpsKeyboardState extends State<GasPumpsKeyboard> {
   int _selectedIndex = -1;
-
-  List<String> _pumps = ['1A', '2A', '3A', '4B', '5B', '6C', '7D'];
 
   void _setSelected(int index) {
     setState(() {
@@ -40,7 +42,7 @@ class _GasPumpsKeyboardState extends State<GasPumpsKeyboard> {
           child: Wrap(
             spacing: 16.0, //space x
             runSpacing: 12.0, //space y
-            children: _pumps
+            children: widget.gasStationPumpsList
                 .asMap()
                 .entries
                 .map(
@@ -86,7 +88,9 @@ class _GasPumpsKeyboardState extends State<GasPumpsKeyboard> {
           text: 'Próximo',
           action: _selectedIndex != -1
               ? () {
-                  Navigator.pushNamed(context, '/measurement');
+                  Navigator.pushNamed(context, MeasurementPage.routeName,
+                      arguments: NavigationSelectPumpsToMeasurementArguments(
+                          widget.gasStationId, _selectedIndex));
                 }
               : null,
         ),

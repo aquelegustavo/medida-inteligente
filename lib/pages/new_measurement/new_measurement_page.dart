@@ -5,6 +5,7 @@ import 'package:desafio_mi/components/or_divider.dart';
 import 'package:desafio_mi/pages/new_measurement/widgets/bluetooth_animation.dart';
 
 class NewMeasurementPage extends StatelessWidget {
+  static const routeName = '/new';
   @override
   Widget build(BuildContext context) {
     return AppBody(

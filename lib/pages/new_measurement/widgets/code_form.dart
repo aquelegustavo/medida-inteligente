@@ -1,3 +1,4 @@
+import 'package:desafio_mi/pages/select_gas_pumps/select_gas_pumps_page.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:desafio_mi/components/default_button.dart';
@@ -15,6 +16,7 @@ class _CodeFormState extends State<CodeForm> {
   bool _isCodeValid = false;
   String _erroCode = '';
   bool _isVerifyingCode = false;
+  String _gasStationId = '';
 
   _onChangeHandler(String value) {
     setState(() {
@@ -52,6 +54,7 @@ class _CodeFormState extends State<CodeForm> {
         _isCodeValid = false;
         _erroCode = "";
         _isVerifyingCode = true;
+        _gasStationId = '';
       },
     );
 
@@ -66,6 +69,7 @@ class _CodeFormState extends State<CodeForm> {
               _isCodeValid = value.toUpperCase() == '123456SC';
               _erroCode = value.toUpperCase() == '123456SC' ? "" : "not-found";
               _isVerifyingCode = false;
+              _gasStationId = value.toUpperCase();
             },
           )
         },
@@ -126,7 +130,10 @@ class _CodeFormState extends State<CodeForm> {
             text: 'Próximo',
             action: _isCodeValid
                 ? () {
-                    Navigator.pushNamed(context, '/select');
+                    Navigator.pushNamed(context, SelectGasPumpsPage.routeName,
+                        arguments:
+                            NavigationNewMeasurementToSelectPumpsArguments(
+                                _gasStationId));
                   }
                 : null,
           )

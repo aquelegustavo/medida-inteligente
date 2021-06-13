@@ -3,9 +3,27 @@ import 'package:flutter/material.dart';
 import 'package:desafio_mi/components/app_body.dart';
 import 'package:desafio_mi/pages/select_gas_pumps/widgets/gas_pumps_keyboard_form.dart';
 
+class NavigationNewMeasurementToSelectPumpsArguments {
+  /**
+   * O gasStationId é recebido, 
+   * via sistema de navegação, ou pelo formulário
+   * da página [new/entercode] ou pela tecnologia
+   * bluthoot
+   */
+  final String gasStationId;
+
+  NavigationNewMeasurementToSelectPumpsArguments(this.gasStationId);
+}
+
 class SelectGasPumpsPage extends StatelessWidget {
+  static const routeName = '/select';
+
   @override
   Widget build(BuildContext context) {
+    // Recebendo gasStationId da página /new
+    final _navigationArguments = ModalRoute.of(context)!.settings.arguments
+        as NavigationNewMeasurementToSelectPumpsArguments;
+
     return AppBody(
       child: Container(
         padding: EdgeInsets.all(24.0),
@@ -48,7 +66,9 @@ class SelectGasPumpsPage extends StatelessWidget {
               ),
             ),
             SizedBox(height: 22.0),
-            GasPumpsKeyboard(title: 'title')
+            GasPumpsKeyboard(
+                gasStationId: _navigationArguments.gasStationId,
+                gasStationPumpsList: ['1A', '2A', '3A', '4B', '5B', '6C', '7D'])
           ],
         ),
       ),
