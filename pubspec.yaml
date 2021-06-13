@@ -26,7 +26,7 @@ dependencies:
 
   google_fonts: ^2.1.0
   sentry_flutter: ^5.1.0 #debug de erros
-  http: ^0.13.3
+  badges: ^2.0.1
 
 dev_dependencies:
   flutter_test:

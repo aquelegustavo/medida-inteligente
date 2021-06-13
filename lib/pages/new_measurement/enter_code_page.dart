@@ -6,19 +6,18 @@ class EnterCodePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppBody(
-      child: Align(
-        child: Container(
-          padding: EdgeInsets.all(24.0),
-          width: 560.0,
-          child: Column(
-            children: <Widget>[
-              SelectableText("Inserir código do posto manualmente",
-                  textAlign: TextAlign.center,
-                  style: Theme.of(context).textTheme.headline3),
-              SizedBox(height: 48.0),
-              CodeForm()
-            ],
-          ),
+      child: Container(
+        padding: EdgeInsets.all(24.0),
+        width: 560.0,
+        child: Column(
+          children: <Widget>[
+            SelectableText("Inserir código do posto manualmente",
+                textAlign: TextAlign.center,
+                style: Theme.of(context).textTheme.headline3),
+            SelectableText("Cógido de debug: '123456SC'"),
+            SizedBox(height: 48.0),
+            CodeForm()
+          ],
         ),
       ),
     );

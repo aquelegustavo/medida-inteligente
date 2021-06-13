@@ -96,13 +96,13 @@ class _CodeFormState extends State<CodeForm> {
     return Container(
       child: Column(
         children: [
-          Center(
+          Container(
+            width: 320, //max-widht
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
-                Container(
-                  width: 300,
+                Expanded(
                   child: TextField(
                       onChanged: _onChangeHandler,
                       onSubmitted: _onChangeHandler,
@@ -126,7 +126,7 @@ class _CodeFormState extends State<CodeForm> {
             text: 'Próximo',
             action: _isCodeValid
                 ? () {
-                    Navigator.pushNamed(context, '/measurement');
+                    Navigator.pushNamed(context, '/select');
                   }
                 : null,
           )

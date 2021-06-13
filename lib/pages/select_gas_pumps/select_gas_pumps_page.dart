@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:desafio_mi/components/app_body.dart';
 import 'package:desafio_mi/pages/select_gas_pumps/widgets/gas_pumps_keyboard_form.dart';
 
-class MeasurementPage extends StatelessWidget {
+class SelectGasPumpsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppBody(

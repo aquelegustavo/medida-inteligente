@@ -69,7 +69,8 @@ class _NewMeasurementsSection extends StatelessWidget {
                         Padding(
                           padding: EdgeInsets.all(6.0),
                           child: Icon(Icons.add,
-                              color: Theme.of(context).primaryColor,
+                              color:
+                                  Theme.of(context).textTheme.headline3?.color,
                               size: 48,
                               semanticLabel: "Ícone adicionar"),
                         ),

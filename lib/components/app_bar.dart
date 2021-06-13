@@ -33,7 +33,6 @@ class AppBarComponent extends StatelessWidget implements PreferredSizeWidget {
                     onTap: () => {Navigator.pushNamed(context, '/auth')},
                     child: ListTile(
                       leading: Icon(item['icon'],
-                          color: AppColors.black,
                           semanticLabel: "Ícone ${item['label']}"),
                       title: Text(item['label'] ?? ''),
                     ),
