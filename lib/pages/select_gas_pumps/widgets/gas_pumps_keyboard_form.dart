@@ -81,7 +81,7 @@ class _GasPumpsKeyboardState extends State<GasPumpsKeyboard> {
                 .toList(),
           ),
         ),
-        SizedBox(height: 32),
+        SizedBox(height: 48),
         DefaultButton(
           text: 'Próximo',
           action: _selectedIndex != -1
