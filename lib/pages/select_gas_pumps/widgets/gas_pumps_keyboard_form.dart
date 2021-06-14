@@ -1,6 +1,6 @@
 import 'package:desafio_mi/components/default_button.dart';
+import 'package:desafio_mi/models/gas_station_pump_model/gas_station_pump_model.dart';
 import 'package:desafio_mi/pages/measurement/measurement_page.dart';
-import 'package:desafio_mi/services/gas_station_service.dart';
 import 'package:flutter/material.dart';
 import 'package:badges/badges.dart';
 import 'package:desafio_mi/config/app_colors.dart';
@@ -10,7 +10,7 @@ class GasPumpsKeyboard extends StatefulWidget {
       {Key? key, required this.gasStationPumpsList, required this.gasStationId})
       : super(key: key);
 
-  final List<Pump> gasStationPumpsList;
+  final List<GasStationPumpModel> gasStationPumpsList;
   final String gasStationId;
 
   @override

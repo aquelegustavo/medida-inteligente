@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:desafio_mi/components/app_body.dart';
-import 'package:desafio_mi/pages/new_measurement/widgets/code_form.dart';
+import 'package:desafio_mi/pages/enter_code/widgets/code_form.dart';
 
 class EnterCodePage extends StatelessWidget {
   static const routeName = '/new/entercode';

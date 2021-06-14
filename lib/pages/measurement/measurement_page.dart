@@ -11,15 +11,15 @@ class MeasurementPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppBody(
-      child: Consumer<GasStationModeChangeNotiflier>(
+      child: Consumer<GasStationChangeNotifierModel>(
         builder: (context, gasStation, child) {
           if (gasStation.hasData) {
-            return Container(
-              padding: EdgeInsets.all(24.0),
-              width: 560.0,
-              child: Consumer<GasStationModeChangeNotiflier>(
-                builder: (context, data, child) {
-                  return Container(
+            return FutureBuilder(builder: (context, snapshot) {
+              if (snapshot.hasData) {
+                return Container(
+                  padding: EdgeInsets.all(24.0),
+                  width: 560.0,
+                  child: Container(
                     padding: EdgeInsets.all(24.0),
                     width: 560.0,
                     child: Wrap(
@@ -62,19 +62,23 @@ class MeasurementPage extends StatelessWidget {
                         ),
                       ],
                     ),
-                  );
-                },
-              ),
-            );
+                  ),
+                );
+              } else if (snapshot.hasError) {
+                return Text('${snapshot.error}');
+              }
+              return CircularProgressIndicator();
+            });
           } else {
             return FutureBuilder(
-                future:
-                    Navigator.pushNamed(context, NewMeasurementPage.routeName),
-                builder: (context, snapshot) {
-                  return Center(
-                    child: CircularProgressIndicator(),
-                  );
-                });
+              future:
+                  Navigator.pushNamed(context, NewMeasurementPage.routeName),
+              builder: (context, snapshot) {
+                return Center(
+                  child: CircularProgressIndicator(),
+                );
+              },
+            );
           }
         },
       ),

@@ -1,4 +1,4 @@
-import 'package:desafio_mi/models/gas_station/location_model/location_model.dart';
+import 'package:desafio_mi/models/gas_station_location_model/gas_station_location_model.dart';
 import 'package:desafio_mi/models/gas_station_pump_model/gas_station_pump_model.dart';
 import 'package:json_annotation/json_annotation.dart';
 part 'gas_station_data_model.g.dart';

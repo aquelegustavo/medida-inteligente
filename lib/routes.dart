@@ -2,7 +2,7 @@ import 'package:desafio_mi/main.dart';
 import 'package:desafio_mi/pages/auth/auth_page.dart';
 import 'package:desafio_mi/pages/measurement/measurement_page.dart';
 
-import 'package:desafio_mi/pages/new_measurement/enter_code_page.dart';
+import 'package:desafio_mi/pages/enter_code/enter_code_page.dart';
 import 'package:desafio_mi/pages/home/home_page.dart';
 import 'package:desafio_mi/pages/new_measurement/new_measurement_page.dart';
 import 'package:desafio_mi/pages/select_gas_pumps/select_gas_pumps_page.dart';

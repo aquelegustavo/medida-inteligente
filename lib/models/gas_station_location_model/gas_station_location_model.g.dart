@@ -10,7 +10,9 @@ GasStationLocationModel _$GasStationLocationModelFromJson(
     Map<String, dynamic> json) {
   return GasStationLocationModel(
     json['street'] as String,
+    json['neighborhood'] as String,
     json['city'] as String,
+    json['cep'] as String,
   );
 }
 
@@ -18,5 +20,7 @@ Map<String, dynamic> _$GasStationLocationModelToJson(
         GasStationLocationModel instance) =>
     <String, dynamic>{
       'street': instance.street,
+      'neighborhood': instance.neighborhood,
       'city': instance.city,
+      'cep': instance.cep,
     };

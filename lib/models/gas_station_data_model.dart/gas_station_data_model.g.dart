@@ -10,7 +10,8 @@ GasStationDataModel _$GasStationDataModelFromJson(Map<String, dynamic> json) {
   return GasStationDataModel(
     id: json['id'] as String,
     name: json['name'] as String,
-    location: json['location'],
+    location: GasStationLocationModel.fromJson(
+        json['location'] as Map<String, dynamic>),
     pumps: (json['pumps'] as List<dynamic>)
         .map((e) => GasStationPumpModel.fromJson(e as Map<String, dynamic>))
         .toList(),
@@ -22,6 +23,6 @@ Map<String, dynamic> _$GasStationDataModelToJson(
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
-      'location': instance.location,
+      'location': instance.location.toJson(),
       'pumps': instance.pumps.map((e) => e.toJson()).toList(),
     };

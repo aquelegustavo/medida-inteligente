@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:desafio_mi/components/default_button.dart';
 import 'package:desafio_mi/config/app_colors.dart';
-import 'package:desafio_mi/pages/new_measurement/widgets/error-message.dart';
+import 'package:desafio_mi/pages/enter_code/widgets/error-message.dart';
 import 'package:provider/provider.dart';
 import 'package:http/http.dart' as http;
 
@@ -62,12 +62,15 @@ class _CodeFormState extends State<CodeForm> {
       },
     );
 
+    print('chamou');
+
     // Código: 6 números 2 letras
     if (RegExp('[0-9]{6}[a-zA-Z]{2}').hasMatch(value)) {
       // Simulação de chamada http
       fetchGasStationData(http.Client(), value)
           .then((gasStation) => {
-                Provider.of<GasStationModeChangeNotiflier>(context,
+                print('ok'),
+                Provider.of<GasStationChangeNotifierModel>(context,
                         listen: false)
                     .update(gasStation),
                 setState(
@@ -77,9 +80,14 @@ class _CodeFormState extends State<CodeForm> {
                     _isVerifyingCode = false;
                     _gasStationId = value.toUpperCase();
                   },
-                )
+                ),
+                print(_isCodeValid),
+                print(_erroCode),
+                print(_isVerifyingCode),
+                print(_gasStationId),
               })
           .catchError((error) => {
+                print(error),
                 setState(
                   () {
                     _isCodeValid = false;
