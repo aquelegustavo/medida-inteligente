@@ -8,7 +8,7 @@ import 'package:http/http.dart' as http;
 import 'dart:async';
 
 import 'package:provider/provider.dart';
-import 'package:desafio_mi/models/gas_station_change_notifier_model.dart';
+import 'package:desafio_mi/models/gas_station_change_notifier_model/gas_station_change_notifier_model.dart';
 
 class SelectGasPumpsPage extends StatefulWidget {
   SelectGasPumpsPage({Key? key}) : super(key: key);
@@ -30,13 +30,13 @@ class _SelectGasPumpsPageState extends State<SelectGasPumpsPage> {
   @override
   Widget build(BuildContext context) {
     return AppBody(
-      child: Consumer<ChangeNotifGasStationModelier>(
+      child: Consumer<GasStationModeChangeNotiflier>(
         builder: (context, gasStation, child) {
           if (gasStation.hasData) {
             return Container(
               padding: EdgeInsets.all(24.0),
               width: 560.0,
-              child: Consumer<ChangeNotifGasStationModelier>(
+              child: Consumer<GasStationModeChangeNotiflier>(
                 builder: (context, data, child) {
                   return Column(
                     children: <Widget>[

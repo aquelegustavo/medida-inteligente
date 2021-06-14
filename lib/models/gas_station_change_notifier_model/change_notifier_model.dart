@@ -1,7 +1,7 @@
 import 'package:desafio_mi/services/gas_station_service.dart';
 import 'package:flutter/material.dart';
 
-class ChangeNotifGasStationModelier extends ChangeNotifier {
+class GasStationModeChangeNotiflier extends ChangeNotifier {
   /// Internal, private state of the cart.
   final List<GasStationData> _gasStationList = [];
 

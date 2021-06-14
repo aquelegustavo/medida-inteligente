@@ -1,4 +1,4 @@
-import 'package:desafio_mi/models/gas_station_change_notifier_model.dart';
+import 'package:desafio_mi/models/gas_station_change_notifier_model/gas_station_change_notifier_model.dart';
 import 'package:desafio_mi/pages/select_gas_pumps/select_gas_pumps_page.dart';
 import 'package:desafio_mi/services/gas_station_service.dart';
 import 'package:flutter/material.dart';
@@ -67,7 +67,7 @@ class _CodeFormState extends State<CodeForm> {
       // Simulação de chamada http
       fetchGasStationData(http.Client(), value)
           .then((gasStation) => {
-                Provider.of<ChangeNotifGasStationModelier>(context,
+                Provider.of<GasStationModeChangeNotiflier>(context,
                         listen: false)
                     .update(gasStation),
                 setState(

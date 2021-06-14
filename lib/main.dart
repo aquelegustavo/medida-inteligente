@@ -1,9 +1,9 @@
 import 'package:desafio_mi/components/app_bar.dart';
-import 'package:desafio_mi/models/gas_station_change_notifier_model.dart';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import './config/app_theme.dart';
+import 'models/gas_station_change_notifier_model/change_notifier_model.dart';
 import 'routes.dart';
 
 // Debub erros
@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(
-            create: (context) => ChangeNotifGasStationModelier()),
+            create: (context) => GasStationModeChangeNotiflier()),
       ],
       child: MaterialApp(
         title: 'Medida Inteligente',

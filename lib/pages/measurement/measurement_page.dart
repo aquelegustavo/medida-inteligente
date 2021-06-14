@@ -1,5 +1,5 @@
 import 'package:desafio_mi/components/text_section.dart';
-import 'package:desafio_mi/models/gas_station_change_notifier_model.dart';
+import 'package:desafio_mi/models/gas_station_change_notifier_model/gas_station_change_notifier_model.dart';
 import 'package:desafio_mi/pages/new_measurement/new_measurement_page.dart';
 import 'package:flutter/material.dart';
 import 'package:desafio_mi/components/app_body.dart';
@@ -11,13 +11,13 @@ class MeasurementPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppBody(
-      child: Consumer<ChangeNotifGasStationModelier>(
+      child: Consumer<GasStationModeChangeNotiflier>(
         builder: (context, gasStation, child) {
           if (gasStation.hasData) {
             return Container(
               padding: EdgeInsets.all(24.0),
               width: 560.0,
-              child: Consumer<ChangeNotifGasStationModelier>(
+              child: Consumer<GasStationModeChangeNotiflier>(
                 builder: (context, data, child) {
                   return Container(
                     padding: EdgeInsets.all(24.0),

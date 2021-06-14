@@ -1,5 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
-part 'gas_station_location.g.dart';
+part 'gas_station_location_model.g.dart';
 
 @JsonSerializable()
 class GasStationLocationModel {
