@@ -1,6 +1,8 @@
 import 'package:desafio_mi/components/app_bar.dart';
+import 'package:desafio_mi/models/gas_station_change_notifier_model.dart';
 
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import './config/app_theme.dart';
 import 'routes.dart';
 
@@ -24,16 +26,22 @@ Future<void> main() async {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Medida Inteligente',
-      themeMode: ThemeMode.light,
-      theme: AppTheme.lightThemeData,
-      darkTheme: AppTheme.darkThemeData,
-      initialRoute: '/',
-      routes: routes,
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+            create: (context) => ChangeNotifGasStationModelier()),
+      ],
+      child: MaterialApp(
+        title: 'Medida Inteligente',
+        themeMode: ThemeMode.light,
+        theme: AppTheme.lightThemeData,
+        darkTheme: AppTheme.darkThemeData,
+        initialRoute: '/',
+        routes: routes,
 
-      // Desabilitando bunner "debug"
-      debugShowCheckedModeBanner: false,
+        // Desabilitando bunner "debug"
+        debugShowCheckedModeBanner: false,
+      ),
     );
   }
 }

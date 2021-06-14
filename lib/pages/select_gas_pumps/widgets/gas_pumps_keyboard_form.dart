@@ -1,5 +1,6 @@
 import 'package:desafio_mi/components/default_button.dart';
 import 'package:desafio_mi/pages/measurement/measurement_page.dart';
+import 'package:desafio_mi/services/gas_station_service.dart';
 import 'package:flutter/material.dart';
 import 'package:badges/badges.dart';
 import 'package:desafio_mi/config/app_colors.dart';
@@ -9,7 +10,7 @@ class GasPumpsKeyboard extends StatefulWidget {
       {Key? key, required this.gasStationPumpsList, required this.gasStationId})
       : super(key: key);
 
-  final List<String> gasStationPumpsList;
+  final List<Pump> gasStationPumpsList;
   final String gasStationId;
 
   @override
@@ -17,9 +18,9 @@ class GasPumpsKeyboard extends StatefulWidget {
 }
 
 class _GasPumpsKeyboardState extends State<GasPumpsKeyboard> {
-  int _selectedIndex = -1;
+  dynamic _selectedIndex;
 
-  void _setSelected(int index) {
+  void _setSelected(String index) {
     setState(() {
       _selectedIndex = index;
     });
@@ -43,10 +44,8 @@ class _GasPumpsKeyboardState extends State<GasPumpsKeyboard> {
             spacing: 16.0, //space x
             runSpacing: 12.0, //space y
             children: widget.gasStationPumpsList
-                .asMap()
-                .entries
                 .map(
-                  (entry) => SizedBox(
+                  (item) => SizedBox(
                     width: 92,
                     height: 56,
                     child: Material(
@@ -56,22 +55,22 @@ class _GasPumpsKeyboardState extends State<GasPumpsKeyboard> {
                         decoration: BoxDecoration(
                           color: Theme.of(context).backgroundColor,
                           borderRadius: BorderRadius.circular(6),
-                          border: entry.key == _selectedIndex
+                          border: item.id == _selectedIndex
                               ? Border.all(width: 4, color: AppColors.green)
                               : null,
                         ),
                         child: InkWell(
-                          onTap: () => {_setSelected(entry.key)},
+                          onTap: () => {_setSelected(item.id)},
                           borderRadius: BorderRadius.circular(6),
                           child: Badge(
-                            showBadge: entry.key == _selectedIndex,
+                            showBadge: item.id == _selectedIndex,
                             badgeColor: AppColors.green,
                             badgeContent: Icon(Icons.done,
                                 size: 16,
                                 color: Theme.of(context).backgroundColor,
                                 semanticLabel: "Bomba selecionada"),
                             child: Text(
-                              entry.value,
+                              item.title,
                               style: TextStyle(fontSize: 22),
                             ),
                           ),
@@ -86,11 +85,9 @@ class _GasPumpsKeyboardState extends State<GasPumpsKeyboard> {
         SizedBox(height: 48),
         DefaultButton(
           text: 'Próximo',
-          action: _selectedIndex != -1
+          action: _selectedIndex != null
               ? () {
-                  Navigator.pushNamed(context, MeasurementPage.routeName,
-                      arguments: NavigationSelectPumpsToMeasurementArguments(
-                          widget.gasStationId, _selectedIndex));
+                  Navigator.pushNamed(context, MeasurementPage.routeName);
                 }
               : null,
         ),

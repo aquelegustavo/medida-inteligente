@@ -1,9 +1,13 @@
+import 'package:desafio_mi/models/gas_station_change_notifier_model.dart';
 import 'package:desafio_mi/pages/select_gas_pumps/select_gas_pumps_page.dart';
+import 'package:desafio_mi/services/gas_station_service.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:desafio_mi/components/default_button.dart';
 import 'package:desafio_mi/config/app_colors.dart';
 import 'package:desafio_mi/pages/new_measurement/widgets/error-message.dart';
+import 'package:provider/provider.dart';
+import 'package:http/http.dart' as http;
 
 class CodeForm extends StatefulWidget {
   @override
@@ -18,7 +22,7 @@ class _CodeFormState extends State<CodeForm> {
   bool _isVerifyingCode = false;
   String _gasStationId = '';
 
-  _onChangeHandler(String value) {
+  _onChangeHandler(String value, BuildContext context) {
     setState(() {
       _isTyping = true; // User está digitando
       _erroCode = ''; //limpando msg de erro
@@ -43,37 +47,48 @@ class _CodeFormState extends State<CodeForm> {
             _isTyping = false; // User não está digitando
           },
         ),
-        _verifyCode(value),
+        _verifyCode(value, context),
       },
     );
   }
 
-  _verifyCode(String value) {
+  _verifyCode(String value, BuildContext context) {
     setState(
       () {
+        _isVerifyingCode = true;
         _isCodeValid = false;
         _erroCode = "";
-        _isVerifyingCode = true;
-        _gasStationId = '';
+        _gasStationId = "";
       },
     );
 
     // Código: 6 números 2 letras
     if (RegExp('[0-9]{6}[a-zA-Z]{2}').hasMatch(value)) {
       // Simulação de chamada http
-      Timer(
-        Duration(seconds: 2),
-        () => {
-          setState(
-            () {
-              _isCodeValid = value.toUpperCase() == '123456SC';
-              _erroCode = value.toUpperCase() == '123456SC' ? "" : "not-found";
-              _isVerifyingCode = false;
-              _gasStationId = value.toUpperCase();
-            },
-          )
-        },
-      );
+      fetchGasStationData(http.Client(), value)
+          .then((gasStation) => {
+                Provider.of<ChangeNotifGasStationModelier>(context,
+                        listen: false)
+                    .update(gasStation),
+                setState(
+                  () {
+                    _isCodeValid = true;
+                    _erroCode = "";
+                    _isVerifyingCode = false;
+                    _gasStationId = value.toUpperCase();
+                  },
+                )
+              })
+          .catchError((error) => {
+                setState(
+                  () {
+                    _isCodeValid = false;
+                    _erroCode = error;
+                    _isVerifyingCode = false;
+                    _gasStationId = value.toUpperCase();
+                  },
+                )
+              });
     } else {
       // Código em formato inválido
       setState(
@@ -108,8 +123,8 @@ class _CodeFormState extends State<CodeForm> {
               children: <Widget>[
                 Expanded(
                   child: TextField(
-                      onChanged: _onChangeHandler,
-                      onSubmitted: _onChangeHandler,
+                      onChanged: (value) => _onChangeHandler(value, context),
+                      onSubmitted: (value) => _onChangeHandler(value, context),
                       textAlign: TextAlign.center,
                       decoration: InputDecoration(hintText: 'Código')),
                 ),
@@ -130,10 +145,7 @@ class _CodeFormState extends State<CodeForm> {
             text: 'Próximo',
             action: _isCodeValid
                 ? () {
-                    Navigator.pushNamed(context, SelectGasPumpsPage.routeName,
-                        arguments:
-                            NavigationNewMeasurementToSelectPumpsArguments(
-                                _gasStationId));
+                    Navigator.pushNamed(context, SelectGasPumpsPage.routeName);
                   }
                 : null,
           )
