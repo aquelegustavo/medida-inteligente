@@ -1,3 +1,4 @@
 class Api {
-  static final String baseUrl = 'http://localhost:3000/api/gas_station/';
+  static final String baseUrl =
+      'https://web-site-medida-inteligente.vercel.app/api/gas_station/';
 }

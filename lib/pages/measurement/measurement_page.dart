@@ -51,10 +51,66 @@ class _MeasurementPageState extends State<MeasurementPage> {
                             ],
                           ),
                           SizedBox(height: 32),
+                          Align(
+                            alignment: Alignment.centerLeft,
+                            child: OutlinedButton(
+                              onPressed: () {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content: const Text(
+                                        'Ação indisponível no modo demonstração :('),
+                                  ),
+                                );
+                              },
+                              child: Container(
+                                width: 100,
+                                child: Row(
+                                  children: [
+                                    Icon(Icons.download,
+                                        semanticLabel: "Ícone de download"),
+                                    SizedBox(width: 4),
+                                    Text('Download')
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            height: 8,
+                          ),
+                          Align(
+                            alignment: Alignment.centerLeft,
+                            child: OutlinedButton(
+                              onPressed: () {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content: const Text(
+                                        'Ação indisponível no modo demonstração :('),
+                                  ),
+                                );
+                              },
+                              child: Container(
+                                width: 150,
+                                child: Row(
+                                  children: [
+                                    Icon(Icons.report,
+                                        semanticLabel:
+                                            "Ícone de reportar problema"),
+                                    SizedBox(width: 4),
+                                    Text('Reportar problema')
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            height: 32,
+                          ),
                           DefaultButton(
                             text: 'Finalizar',
                             action: () {
-                              Navigator.pop(context);
+                              Navigator.popUntil(
+                                  context, ModalRoute.withName('/'));
                             },
                           ),
                         ],
