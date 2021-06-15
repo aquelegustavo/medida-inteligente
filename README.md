@@ -8,7 +8,7 @@ Desafio Layout em Flutter para a vaga do laboratório de segurança em computaç
 ## Demonstração
 
 ### Mobile (em video)
-![Demonstração do app](https://lh5.googleusercontent.com/UUAhCR60CAGg0VxWJKE1mp0pQmfcnLQeZ5ae-GcqqqlWY6c0_h9Ln86JQJwCF4GMdBCPPbF-RTyWtulERtHy=w1360-h657)
+![Demonstração do app](https://github.com/gustavo-simoes/app-medida-inteligente/blob/main/app_demo.gif)
 
 <br/>
 
