@@ -12,14 +12,16 @@ class AppBarComponent extends StatelessWidget implements PreferredSizeWidget {
     ];
 
     return AppBar(
-      title: Image.asset("images/logo_white.png"),
+      title: Image.network(
+          "https://web-site-medida-inteligente.vercel.app/logo_white.png"),
       centerTitle: true,
       actions: [
         Padding(
           padding: EdgeInsets.fromLTRB(24.0, 6.0, 4.0, 6.0),
           child: CircleAvatar(
             radius: 20,
-            backgroundImage: NetworkImage('https://cataas.com/cat'),
+            backgroundImage: NetworkImage(
+                'https://lh3.googleusercontent.com/ogw/ADea4I6jlqb0BRPBiqq87OAo5gIFvu4X8j68JhbNkPrRPm0=s83-c-mo'),
           ),
         ),
         PopupMenuButton(
@@ -30,7 +32,14 @@ class AppBarComponent extends StatelessWidget implements PreferredSizeWidget {
               .map(
                 (item) => new PopupMenuItem(
                   child: GestureDetector(
-                    onTap: () => {Navigator.pushNamed(context, '/auth')},
+                    onTap: () => {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          content: const Text(
+                              'Ação indisponível no modo demonstração :('),
+                        ),
+                      ),
+                    },
                     child: ListTile(
                       leading: Icon(item['icon'],
                           semanticLabel: "Ícone ${item['label']}"),

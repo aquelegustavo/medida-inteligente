@@ -90,7 +90,7 @@ class _MeasurementPageState extends State<MeasurementPage> {
                                 );
                               },
                               child: Container(
-                                width: 150,
+                                width: 170,
                                 child: Row(
                                   children: [
                                     Icon(Icons.report,
