@@ -1,16 +1,39 @@
-# desafio_mi
+# Medida Inteligente
 
-A new Flutter project.
+Desafio Layout em Flutter para a vaga do laboratório de segurança em computação da UFSC em parceria com o INMETRO.
 
-## Getting Started
+## Demonstração
 
-This project is a starting point for a Flutter application.
+Acesse a demonstração do aplicativo versão web em [https://medidainteligente.web.app/](https://medidainteligente.web.app/)
 
-A few resources to get you started if this is your first Flutter project:
+## Iniciando localmente
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+Caso seu Flutter SDK esteja devidamente instalado, basta clonar este repositório e iniciar os testes localmente seguindo as orientações da [biblioteca oficial do flutter](https://flutter.dev/docs/).
+<br/>
+Basicamente:
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```
+$  git clone https://github.com/gustavo-simoes/app-medida-inteligente.git
+$  cd app-medida-inteligente
+$  flutter pub get
+$  flutter run
+```
+
+<br/>
+Agora, caso você não tenha ideia do que seja Flutter SDK, sugiro ir do começo, seguindo as orientações de [iniciação do flutter](https://flutter.dev/docs/get-started/install)
+
+### Códigos de postos
+
+Para demonstrar que a aplicação usa dados externos, cadastrei no "banco de dados" (mock de api) os seguintes postos:
+
+| Código   | Nome do posto                    |
+| -------- | -------------------------------- |
+| 123456SC | Posto Sit 8 amet                 |
+| 111222DF | Posto Lorem Impsum               |
+| 885599ZA | Donec tincidunt 9'0              |
+| 654321EX | Posto Neque porro accumsan risus |
+| 252525AA | Posto Etiam vehicula             |
+
+<br>
+<br>
+Feito com carinho e muito (muito) café por Gustavo Simões.
