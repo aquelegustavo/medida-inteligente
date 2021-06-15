@@ -2,14 +2,26 @@
 
 Desafio Layout em Flutter para a vaga do laboratório de segurança em computação da UFSC em parceria com o INMETRO.
 
+
+<br/>
+
 ## Demonstração
 
+### Mobile (em video)
+![Demonstração do app](https://lh5.googleusercontent.com/UUAhCR60CAGg0VxWJKE1mp0pQmfcnLQeZ5ae-GcqqqlWY6c0_h9Ln86JQJwCF4GMdBCPPbF-RTyWtulERtHy=w1360-h657)
+
+<br/>
+
+### Web (live demo)
 Acesse a demonstração do aplicativo versão web em [https://medidainteligente.web.app/](https://medidainteligente.web.app/)
+
+<br/>
 
 ## Iniciando localmente
 
 Caso seu Flutter SDK esteja devidamente instalado, basta clonar este repositório e iniciar os testes localmente seguindo as orientações da [biblioteca oficial do flutter](https://flutter.dev/docs/).
 <br/>
+
 Basicamente:
 
 ```
@@ -22,7 +34,10 @@ $  flutter run
 <br/>
 Agora, caso você não tenha ideia do que seja Flutter SDK, sugiro ir do começo, seguindo as orientações de [iniciação do flutter](https://flutter.dev/docs/get-started/install)
 
-### Códigos de postos
+<br/>
+<br/>
+
+## Códigos de postos
 
 Para demonstrar que a aplicação usa dados externos, cadastrei no "banco de dados" (mock de api) os seguintes postos:
 
@@ -34,6 +49,8 @@ Para demonstrar que a aplicação usa dados externos, cadastrei no "banco de dad
 | 654321EX | Posto Neque porro accumsan risus |
 | 252525AA | Posto Etiam vehicula             |
 
-<br>
-<br>
+<br/>
+<br/>
+<br/>
+
 Feito com carinho e muito (muito) café por Gustavo Simões.
