@@ -46,7 +46,7 @@ class _SelectGasPumpsPageState extends State<SelectGasPumpsPage> {
                         borderRadius: BorderRadius.circular(6),
                       ),
                       child: TextSection(
-                        title: 'data.gasStation.name',
+                        title: gasStation.data.name,
                         content: [
                           {'label': 'Rua', 'text': 'gaas]].location.street'},
                           {

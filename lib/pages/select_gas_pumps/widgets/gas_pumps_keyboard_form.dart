@@ -1,9 +1,11 @@
 import 'package:desafio_mi/components/default_button.dart';
+import 'package:desafio_mi/models/gas_station_change_notifier_model/gas_station_change_notifier_model.dart';
 import 'package:desafio_mi/models/gas_station_pump_model/gas_station_pump_model.dart';
 import 'package:desafio_mi/pages/measurement/measurement_page.dart';
 import 'package:flutter/material.dart';
 import 'package:badges/badges.dart';
 import 'package:desafio_mi/config/app_colors.dart';
+import 'package:provider/provider.dart';
 
 class GasPumpsKeyboard extends StatefulWidget {
   GasPumpsKeyboard(
@@ -20,7 +22,12 @@ class GasPumpsKeyboard extends StatefulWidget {
 class _GasPumpsKeyboardState extends State<GasPumpsKeyboard> {
   dynamic _selectedIndex;
 
-  void _setSelected(String index) {
+  void _setSelected(context, String index) {
+    // Definindo valor globalmente
+    Provider.of<GasStationChangeNotifierModel>(context, listen: false)
+        .updadeSelectedPump(index);
+
+    // Definindo valor local
     setState(() {
       _selectedIndex = index;
     });
@@ -60,7 +67,7 @@ class _GasPumpsKeyboardState extends State<GasPumpsKeyboard> {
                               : null,
                         ),
                         child: InkWell(
-                          onTap: () => {_setSelected(item.id)},
+                          onTap: () => {_setSelected(context, item.id)},
                           borderRadius: BorderRadius.circular(6),
                           child: Badge(
                             showBadge: item.id == _selectedIndex,

@@ -4,7 +4,7 @@ part 'measurement_authenticity_model.g.dart';
 @JsonSerializable()
 class MeasurementAuthenticityModel {
   final String measurementdata;
-  final String softwareintegrity;
+  final int softwareintegrity;
 
   MeasurementAuthenticityModel({
     required this.measurementdata,

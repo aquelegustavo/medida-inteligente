@@ -10,7 +10,7 @@ MeasurementAuthenticityModel _$MeasurementAuthenticityModelFromJson(
     Map<String, dynamic> json) {
   return MeasurementAuthenticityModel(
     measurementdata: json['measurementdata'] as String,
-    softwareintegrity: json['softwareintegrity'] as String,
+    softwareintegrity: json['softwareintegrity'] as int,
   );
 }
 

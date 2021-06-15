@@ -1,4 +1,3 @@
-import 'package:desafio_mi/main.dart';
 import 'package:desafio_mi/pages/auth/auth_page.dart';
 import 'package:desafio_mi/pages/measurement/measurement_page.dart';
 

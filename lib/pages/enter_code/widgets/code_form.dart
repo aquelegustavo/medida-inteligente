@@ -62,14 +62,11 @@ class _CodeFormState extends State<CodeForm> {
       },
     );
 
-    print('chamou');
-
     // Código: 6 números 2 letras
     if (RegExp('[0-9]{6}[a-zA-Z]{2}').hasMatch(value)) {
       // Simulação de chamada http
       fetchGasStationData(http.Client(), value)
           .then((gasStation) => {
-                print('ok'),
                 Provider.of<GasStationChangeNotifierModel>(context,
                         listen: false)
                     .update(gasStation),
@@ -81,13 +78,8 @@ class _CodeFormState extends State<CodeForm> {
                     _gasStationId = value.toUpperCase();
                   },
                 ),
-                print(_isCodeValid),
-                print(_erroCode),
-                print(_isVerifyingCode),
-                print(_gasStationId),
               })
           .catchError((error) => {
-                print(error),
                 setState(
                   () {
                     _isCodeValid = false;

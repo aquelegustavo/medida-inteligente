@@ -1,10 +1,12 @@
 import 'package:desafio_mi/components/app_bar.dart';
 
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+
 import 'package:provider/provider.dart';
 import './config/app_theme.dart';
 import 'models/gas_station_change_notifier_model/gas_station_change_notifier_model.dart';
-import 'routes.dart';
+import 'config/routes.dart';
 
 // Debub erros
 import 'package:sentry_flutter/sentry_flutter.dart';

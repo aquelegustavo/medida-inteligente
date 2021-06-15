@@ -7,7 +7,6 @@ import '../config/api.dart';
 Future<GasStationDataModel> fetchGasStationData(
     http.Client client, String value) async {
   final response = await client.get(Uri.parse(Api.baseUrl + value));
-  print(response.body);
 
   if (response.statusCode == 200) {
     return GasStationDataModel.fromJson(jsonDecode(response.body));
