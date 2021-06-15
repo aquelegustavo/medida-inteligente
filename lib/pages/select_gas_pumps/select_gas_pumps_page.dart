@@ -33,6 +33,8 @@ class _SelectGasPumpsPageState extends State<SelectGasPumpsPage> {
       child: Consumer<GasStationChangeNotifierModel>(
         builder: (context, gasStation, child) {
           if (gasStation.hasData) {
+            GasStationDataModel data = gasStation.data;
+
             return Container(
                 padding: EdgeInsets.all(24.0),
                 width: 560.0,
@@ -48,13 +50,16 @@ class _SelectGasPumpsPageState extends State<SelectGasPumpsPage> {
                       child: TextSection(
                         title: gasStation.data.name,
                         content: [
-                          {'label': 'Rua', 'text': 'gaas]].location.street'},
+                          {
+                            'label': 'Rua',
+                            'text': data.location.street,
+                          },
                           {
                             'label': 'Bairro',
-                            'text': 'Nunc aliquet ullamcorper'
+                            'text': data.location.neighborhood
                           },
-                          {'label': 'Cidade', 'text': 'Maecenas'},
-                          {'label': 'CEP', 'text': gasStation.data.name}
+                          {'label': 'Cidade', 'text': data.location.city},
+                          {'label': 'CEP', 'text': data.location.cep},
                         ],
                       ),
                     ),

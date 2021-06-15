@@ -1,3 +1,4 @@
+import 'package:desafio_mi/components/default_button.dart';
 import 'package:desafio_mi/components/text_section.dart';
 import 'package:desafio_mi/models/gas_station_change_notifier_model/gas_station_change_notifier_model.dart';
 import 'package:desafio_mi/models/measurement_data_model/measurement_data_model.dart';
@@ -23,50 +24,59 @@ class MeasurementPage extends StatefulWidget {
 class _MeasurementPageState extends State<MeasurementPage> {
   @override
   Widget build(BuildContext context) {
-    return AppBody(
-      child: Consumer<GasStationChangeNotifierModel>(
-        builder: (context, gasStation, child) {
-          if (gasStation.hasData && gasStation.hasPumpSelected) {
-            return FutureBuilder(
-                future: fetchMeasurementData(http.Client(), gasStation.data.id,
-                    gasStation.selectedPump.id),
-                builder:
-                    (context, AsyncSnapshot<MeasurementDataModel> snapshot) {
-                  if (snapshot.hasData) {
-                    final data = snapshot.data!;
+    return Consumer<GasStationChangeNotifierModel>(
+      builder: (context, gasStation, child) {
+        if (gasStation.hasData && gasStation.hasPumpSelected) {
+          return FutureBuilder(
+            future: fetchMeasurementData(
+                http.Client(), gasStation.data.id, gasStation.selectedPump.id),
+            builder: (context, AsyncSnapshot<MeasurementDataModel> snapshot) {
+              if (snapshot.hasData) {
+                final data = snapshot.data!;
 
-                    return Container(
+                return AppBody(
+                  child: Container(
                       padding: EdgeInsets.all(24.0),
                       width: 768.0,
-                      child: Wrap(
-                        spacing: 16.0, //space x
-                        runSpacing: 12.0, //space y
-                        alignment: WrapAlignment.start,
+                      child: Column(
                         children: <Widget>[
-                          GasStationSection(data: data.gasStation),
-                          FuelSection(data: data.fuelSection),
-                          AuthenticitySection(data: data.authenticity),
+                          Wrap(
+                            spacing: 16.0, //space x
+                            runSpacing: 12.0, //space y
+                            alignment: WrapAlignment.start,
+                            children: <Widget>[
+                              GasStationSection(data: data.gasStation),
+                              FuelSection(data: data.fuelSection),
+                              AuthenticitySection(data: data.authenticity),
+                            ],
+                          ),
+                          SizedBox(height: 32),
+                          DefaultButton(
+                            text: 'Finalizar',
+                            action: () {
+                              Navigator.pop(context);
+                            },
+                          ),
                         ],
-                      ),
-                    );
-                  } else if (snapshot.hasError) {
-                    return Text('${snapshot.error}');
-                  }
-                  return CircularProgressIndicator();
-                });
-          } else {
-            return FutureBuilder(
-              future:
-                  Navigator.pushNamed(context, NewMeasurementPage.routeName),
-              builder: (context, snapshot) {
-                return Center(
-                  child: CircularProgressIndicator(),
+                      )),
                 );
-              },
-            );
-          }
-        },
-      ),
+              } else if (snapshot.hasError) {
+                return Text('${snapshot.error}');
+              }
+              return Center(child: CircularProgressIndicator());
+            },
+          );
+        } else {
+          return FutureBuilder(
+            future: Navigator.pushNamed(context, NewMeasurementPage.routeName),
+            builder: (context, snapshot) {
+              return Center(
+                child: CircularProgressIndicator(),
+              );
+            },
+          );
+        }
+      },
     );
   }
 }
