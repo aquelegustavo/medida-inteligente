@@ -1,17 +1,22 @@
 import 'package:desafio_mi/components/app_bar.dart';
 
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 
 import 'package:provider/provider.dart';
 import './config/app_theme.dart';
 import 'models/gas_station_change_notifier_model/gas_station_change_notifier_model.dart';
 import 'config/routes.dart';
 
+//Estratégia de rotas
+import 'configure_nonweb.dart' if (dart.library.html) 'configure_web.dart';
 // Debub erros
 import 'package:sentry_flutter/sentry_flutter.dart';
 
 Future<void> main() async {
+  //Estratégia de rotas
+  // Saiba mais em https://flutter.dev/docs/development/ui/navigation/url-strategies
+  configureApp();
+
   /*
     Informar ao serviço terceiro Sentry 
     caso o app crashe.
