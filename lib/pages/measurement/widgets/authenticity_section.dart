@@ -1,6 +1,9 @@
-import 'package:desafio_mi/components/text_section.dart';
-import 'package:desafio_mi/models/measurement_authenticity_model/measurement_authenticity_model.dart';
+// Código por Gustavo Simões
+// https://github.com/gustavo-simoes
+
 import 'package:flutter/material.dart';
+import 'package:desafio_mi/models/measurement_authenticity_model/measurement_authenticity_model.dart';
+import 'package:desafio_mi/components/text_section.dart';
 
 class AuthenticitySection extends StatelessWidget {
   AuthenticitySection({

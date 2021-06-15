@@ -1,14 +1,17 @@
+// Código por Gustavo Simões
+// https://github.com/gustavo-simoes
+
 import 'dart:async';
-import 'package:desafio_mi/components/text_section.dart';
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:http/http.dart' as http;
 import 'package:desafio_mi/models/gas_station_change_notifier_model/gas_station_change_notifier_model.dart';
 import 'package:desafio_mi/models/gas_station_data_model.dart/gas_station_data_model.dart';
-import 'package:desafio_mi/pages/new_measurement/new_measurement_page.dart';
 import 'package:desafio_mi/services/gas_station_service.dart';
-import 'package:flutter/material.dart';
 import 'package:desafio_mi/components/app_body.dart';
+import 'package:desafio_mi/components/text_section.dart';
+import 'package:desafio_mi/pages/new_measurement/new_measurement_page.dart';
 import 'package:desafio_mi/pages/select_gas_pumps/widgets/gas_pumps_keyboard_form.dart';
-import 'package:http/http.dart' as http;
-import 'package:provider/provider.dart';
 
 class SelectGasPumpsPage extends StatefulWidget {
   SelectGasPumpsPage({Key? key}) : super(key: key);

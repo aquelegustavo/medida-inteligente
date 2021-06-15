@@ -1,3 +1,6 @@
+// Código por Gustavo Simões
+// https://github.com/gustavo-simoes
+
 import 'package:flutter/material.dart';
 import 'package:desafio_mi/components/app_body.dart';
 import 'package:desafio_mi/pages/enter_code/widgets/code_form.dart';
@@ -16,7 +19,6 @@ class EnterCodePage extends StatelessWidget {
             SelectableText("Inserir código do posto manualmente",
                 textAlign: TextAlign.center,
                 style: Theme.of(context).textTheme.headline3),
-            SelectableText("Cógido de debug: '123456SC'"),
             SizedBox(height: 48.0),
             CodeForm()
           ],

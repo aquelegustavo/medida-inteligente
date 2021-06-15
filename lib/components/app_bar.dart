@@ -1,3 +1,6 @@
+// Código por Gustavo Simões
+// https://github.com/gustavo-simoes
+
 import 'package:flutter/material.dart';
 import 'package:desafio_mi/config/app_colors.dart';
 

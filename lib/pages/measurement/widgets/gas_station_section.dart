@@ -1,6 +1,9 @@
-import 'package:desafio_mi/components/text_section.dart';
-import 'package:desafio_mi/models/gas_station_data_model.dart/gas_station_data_model.dart';
+// Código por Gustavo Simões
+// https://github.com/gustavo-simoes
+
 import 'package:flutter/material.dart';
+import 'package:desafio_mi/models/gas_station_data_model.dart/gas_station_data_model.dart';
+import 'package:desafio_mi/components/text_section.dart';
 
 class GasStationSection extends StatelessWidget {
   GasStationSection({

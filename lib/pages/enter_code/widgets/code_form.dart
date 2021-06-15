@@ -1,13 +1,16 @@
-import 'package:desafio_mi/models/gas_station_change_notifier_model/gas_station_change_notifier_model.dart';
-import 'package:desafio_mi/pages/select_gas_pumps/select_gas_pumps_page.dart';
-import 'package:desafio_mi/services/gas_station_service.dart';
-import 'package:flutter/material.dart';
+// Código por Gustavo Simões
+// https://github.com/gustavo-simoes
+
 import 'dart:async';
-import 'package:desafio_mi/components/default_button.dart';
-import 'package:desafio_mi/config/app_colors.dart';
-import 'package:desafio_mi/pages/enter_code/widgets/error-message.dart';
+import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:http/http.dart' as http;
+import 'package:desafio_mi/config/app_colors.dart';
+import 'package:desafio_mi/models/gas_station_change_notifier_model/gas_station_change_notifier_model.dart';
+import 'package:desafio_mi/services/gas_station_service.dart';
+import 'package:desafio_mi/components/default_button.dart';
+import 'package:desafio_mi/pages/select_gas_pumps/select_gas_pumps_page.dart';
+import 'package:desafio_mi/pages/enter_code/widgets/error-message.dart';
 
 class CodeForm extends StatefulWidget {
   @override

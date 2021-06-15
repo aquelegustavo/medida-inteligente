@@ -1,3 +1,6 @@
+// Código por Gustavo Simões
+// https://github.com/gustavo-simoes
+
 import 'package:flutter/material.dart';
 import 'package:desafio_mi/components/app_body.dart';
 import 'package:desafio_mi/components/default_button.dart';

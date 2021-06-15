@@ -1,5 +1,8 @@
-import 'package:desafio_mi/models/gas_station_pump_model/gas_station_pump_model.dart';
+// Código por Gustavo Simões
+// https://github.com/gustavo-simoes
+
 import 'package:json_annotation/json_annotation.dart';
+import 'package:desafio_mi/models/gas_station_pump_model/gas_station_pump_model.dart';
 part 'measurement_fuel_section_model.g.dart';
 
 @JsonSerializable()

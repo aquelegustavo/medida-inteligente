@@ -1,7 +1,9 @@
-import 'package:desafio_mi/components/app_bar.dart';
-import 'package:desafio_mi/config/app_colors.dart';
+// Código por Gustavo Simões
+// https://github.com/gustavo-simoes
 
 import 'package:flutter/material.dart';
+import 'package:desafio_mi/config/app_colors.dart';
+import 'package:desafio_mi/components/app_bar.dart';
 
 class HomePage extends StatelessWidget {
   @override

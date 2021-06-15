@@ -1,7 +1,10 @@
-import 'package:desafio_mi/models/gas_station_data_model.dart/gas_station_data_model.dart';
-import 'package:desafio_mi/models/measurement_authenticity_model/measurement_authenticity_model.dart';
-import 'package:desafio_mi/models/measurement_fuel_section_model/measurement_fuel_section_model.dart';
+// Código por Gustavo Simões
+// https://github.com/gustavo-simoes
+
 import 'package:json_annotation/json_annotation.dart';
+import 'package:desafio_mi/models/gas_station_data_model.dart/gas_station_data_model.dart';
+import 'package:desafio_mi/models/measurement_fuel_section_model/measurement_fuel_section_model.dart';
+import 'package:desafio_mi/models/measurement_authenticity_model/measurement_authenticity_model.dart';
 part 'measurement_data_model.g.dart';
 
 @JsonSerializable(explicitToJson: true)

@@ -1,10 +1,11 @@
+// Código por Gustavo Simões
+// https://github.com/gustavo-simoes
+
+import 'package:flutter/material.dart';
 import 'package:desafio_mi/models/gas_station_data_model.dart/gas_station_data_model.dart';
 import 'package:desafio_mi/models/gas_station_pump_model/gas_station_pump_model.dart';
 
-import 'package:flutter/material.dart';
-
 class GasStationChangeNotifierModel extends ChangeNotifier {
-  /// Internal, private state of the cart.
   final List<GasStationDataModel> _gasStationList = [];
   final List<String> _selectedPumpIdList = [];
 

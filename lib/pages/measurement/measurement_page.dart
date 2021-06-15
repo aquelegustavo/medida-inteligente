@@ -1,17 +1,18 @@
-import 'package:desafio_mi/components/default_button.dart';
-import 'package:desafio_mi/components/text_section.dart';
+// Código por Gustavo Simões
+// https://github.com/gustavo-simoes
+
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:http/http.dart' as http;
 import 'package:desafio_mi/models/gas_station_change_notifier_model/gas_station_change_notifier_model.dart';
 import 'package:desafio_mi/models/measurement_data_model/measurement_data_model.dart';
+import 'package:desafio_mi/services/measurement_service.dart';
+import 'package:desafio_mi/components/app_body.dart';
+import 'package:desafio_mi/components/default_button.dart';
 import 'package:desafio_mi/pages/measurement/widgets/authenticity_section.dart';
 import 'package:desafio_mi/pages/measurement/widgets/fuel_section.dart';
 import 'package:desafio_mi/pages/measurement/widgets/gas_station_section.dart';
 import 'package:desafio_mi/pages/new_measurement/new_measurement_page.dart';
-import 'package:desafio_mi/services/measurement_service.dart';
-import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
-import 'package:desafio_mi/components/app_body.dart';
-import 'package:intl/intl.dart';
-import 'package:provider/provider.dart';
 
 class MeasurementPage extends StatefulWidget {
   static const routeName = '/measurement';

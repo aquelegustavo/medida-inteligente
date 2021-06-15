@@ -1,8 +1,11 @@
+// Código por Gustavo Simões
+// https://github.com/gustavo-simoes
+
 import 'dart:async';
 import 'dart:convert';
-import 'package:desafio_mi/models/gas_station_data_model.dart/gas_station_data_model.dart';
 import 'package:http/http.dart' as http;
 import '../config/api.dart';
+import 'package:desafio_mi/models/gas_station_data_model.dart/gas_station_data_model.dart';
 
 Future<GasStationDataModel> fetchGasStationData(
     http.Client client, String value) async {
